@@ -19,6 +19,9 @@ class TestBlockStore(unittest.TestCase):
         contents = self.bstore.get_block_contents(hash)
         self.assertEqual("Hello, World!", contents)
 
+    def test_file_storage(self):
+        hash = self.bstore.put_file("shakespeare")
+        print(hash)
 
 if __name__ == '__main__':
     unittest.main()
